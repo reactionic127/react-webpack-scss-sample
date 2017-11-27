@@ -2,6 +2,7 @@
   "name": "akko-client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://reactionic127.github.io/react-webpack-scss-sample",
   "dependencies": {
     "amazon-cognito-identity-js": "^1.19.0",
     "aws-api-gateway-client": "^0.2.9",
@@ -26,6 +27,7 @@
     "expect-jsx": "^5.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^1.1.0",
     "history": "^4.7.2",
     "jsdom": "^11.4.0",
     "material-ui": "^0.19.4",
@@ -129,6 +131,7 @@
     "review": "run-s lint lint-sass test:clean test:coverage test:coverage:verify test:coverage:report",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "lint-sass": "sass-lint -c .sass-lint.yml 'src/styles/**/*.scss' -v -q"
+    "lint-sass": "sass-lint -c .sass-lint.yml 'src/styles/**/*.scss' -v -q",
+    "deploy": "npm run build&&gh-pages -d dist"
   }
 }
