@@ -26,7 +26,7 @@ class WebpackDistConfig extends WebpackBaseConfig {
       output: {
         path: root('dist'),
         publicPath: '/',
-        filename: 'app.js',
+        filename: 'assets/app.js',
         chunkFilename: 'assets/[id].[hash].chunk.js',
       },
     };
