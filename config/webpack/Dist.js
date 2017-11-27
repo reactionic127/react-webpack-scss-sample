@@ -25,9 +25,9 @@ class WebpackDistConfig extends WebpackBaseConfig {
       entry: ['./index.js'],
       output: {
         path: root('dist'),
-        publicPath: '/assets',
-        filename: 'assets/app.js',
-        chunkFilename: 'assets/[id].[hash].chunk.js',
+        publicPath: '/',
+        filename: './assets/app.js',
+        chunkFilename: './assets/[id].[hash].chunk.js',
       },
     };
 
@@ -50,7 +50,7 @@ class WebpackDistConfig extends WebpackBaseConfig {
 
     this.config.module.rules = this.config.module.rules.concat([
       {
-        test: /\.scss$/,
+        test: /^.((?!cssmodule).)*\.(sass|scss)$/,
         loaders: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },
