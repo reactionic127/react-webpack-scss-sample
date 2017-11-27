@@ -132,7 +132,7 @@ class WebpackBaseConfig {
       output: {
         path: path.resolve('./dist/assets'),
         filename: 'app.js',
-        publicPath: '/assets/',
+        publicPath: 'assets/',
       },
       plugins: [
         new Dotenv(),
