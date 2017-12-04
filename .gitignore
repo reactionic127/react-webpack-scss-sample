@@ -64,6 +64,4 @@ linters
 # dotenv environment variables file
 .env
 
-*.lock
-
 .DS_Store
