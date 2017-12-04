@@ -1,18 +1,8 @@
 {
   "presets": [
-    "react",
-    [
-      "env",
-      {
-        "modules": "commonjs",
-        "targets": {
-          "browsers": ["last 2 versions"]
-        }
-      }
-    ]
+    "react"
   ],
   "plugins": [
-    "transform-object-rest-spread",
     "transform-class-properties",
     "react-hot-loader/babel",
     ["transform-runtime", { "polyfill": false }]
