@@ -65,3 +65,5 @@ linters
 .env
 
 *.lock
+
+.DS_Store
