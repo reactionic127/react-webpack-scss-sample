@@ -132,6 +132,8 @@
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "lint-sass": "sass-lint -c .sass-lint.yml 'src/styles/**/*.scss' -v -q",
-    "deploy": "npm run build&&gh-pages -d dist"
+    "deploy": "npm run build&&gh-pages -d dist",
+    "heroku-prebuild": "npm i -g pm2 && pm2 install pm2-logrotate",
+    "heroku-postbuild": "npm run build"
   }
 }
