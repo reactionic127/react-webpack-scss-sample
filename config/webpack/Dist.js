@@ -23,25 +23,25 @@ class WebpackDistConfig extends WebpackBaseConfig {
       cache: false,
       devtool: 'source-map',
       entry: ['./index.js'],
-      // output: {
-      //   path: root('dist'),
-      //   publicPath: './',
-      //   filename: './app.js',
-      //   chunkFilename: './[id].[hash].chunk.js',
-      // },
+      output: {
+        path: root('dist'),
+        publicPath: './',
+        filename: 'assets/app.js',
+        chunkFilename: './[id].[hash].chunk.js',
+      },
     };
 
     this.config.plugins = this.config.plugins.concat([
-      // new webpack.DefinePlugin({
-      //   'process.env.NODE_ENV': '"production"',
-      // }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': '"production"',
+      }),
       new webpack.optimize.AggressiveMergingPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       new CopyWebpackPlugin([
         { from: root('public/.htaccess'), to: root('dist/') },
         { from: root('public/index.html'), to: root('dist/') },
         { from: root('public/favicon.ico'), to: root('dist/') },
-        // { from: root('src/assets'), to: root('dist/assets') },
+        { from: root('src/assets'), to: root('dist/assets') },
       ]),
       new Visualizer({
         filename: './statistics.html',
