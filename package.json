@@ -102,9 +102,9 @@
   },
   "scripts": {
     "start": "npm run serve:dev",
-    "serve:dev": "webpack-dev-server --open --env dev",
+    "serve:dev": "webpack-dev-server --open --env dev --colors",
     "serve:dist": "webpack-dev-server NODE_ENV=production --open --env dist -p --progress",
-    "build": "npm run clean && NODE_ENV=production webpack --progress --bail --env dist -p",
+    "build": "npm run clean && NODE_ENV=production webpack --progress --bail --env dist -p --colors",
     "clean": "rimraf dist/*",
     "test": "cross-env NODE_PATH=src NODE_ENV=test ava --concurrency 18",
     "test:watch": "npm run test -- --watch",

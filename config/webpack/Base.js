@@ -134,6 +134,9 @@ class WebpackBaseConfig {
           },
         ],
       },
+      stats: {
+        colors: true
+      },
       output: {
         path: path.resolve('./dist/assets'),
         filename: 'app.js',
