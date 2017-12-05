@@ -86,7 +86,8 @@ class WebpackBaseConfig {
           {
             enforce: 'pre',
             test: /\.js?$/,
-            include: WebpackBaseConfig.srcPathAbsolute,
+            // include: WebpackBaseConfig.srcPathAbsolute,
+            exclude: /node_modules/,
             loader: 'babel-loader',
           },
           {
@@ -102,9 +103,10 @@ class WebpackBaseConfig {
           },
           {
             test: /\.(js|jsx)$/,
-            include: [].concat(WebpackBaseConfig.includedPackages, [
-              WebpackBaseConfig.srcPathAbsolute,
-            ]),
+            // include: [].concat(WebpackBaseConfig.includedPackages, [
+            //   WebpackBaseConfig.srcPathAbsolute,
+            // ]),
+            exclude: /node_modules/,
             loaders: [
               { loader: 'babel-loader' },
             ],

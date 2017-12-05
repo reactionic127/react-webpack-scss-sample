@@ -8,7 +8,9 @@
 const webpack = require('webpack');
 const WebpackBaseConfig = require('./Base');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const Visualizer = require('webpack-visualizer-plugin');
+// const Visualizer = require('webpack-visualizer-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '../..');
@@ -36,16 +38,24 @@ class WebpackDistConfig extends WebpackBaseConfig {
         'process.env.NODE_ENV': '"production"',
       }),
       new webpack.optimize.AggressiveMergingPlugin(),
-      new webpack.NoEmitOnErrorsPlugin(),
       new CopyWebpackPlugin([
         { from: root('public/.htaccess'), to: root('dist/') },
         { from: root('public/index.html'), to: root('dist/') },
         { from: root('public/favicon.ico'), to: root('dist/') },
         { from: root('src/assets'), to: root('dist/assets') },
       ]),
-      new Visualizer({
-        filename: './statistics.html',
+      new ExtractTextPlugin({
+        allChunks: true,
+        filename: 'assets/style.[contenthash].css',
       }),
+      // new Visualizer({
+      //   filename: './statistics.html',
+      // }),
+      // new HtmlWebpackPlugin({
+      //   title: 'akko',
+      //   filename: 'index.html',
+      //   template: 'assets/production_index.html',
+      // }),
     ]);
 
     // Deactivate hot-reloading if we run dist build on the dev server
