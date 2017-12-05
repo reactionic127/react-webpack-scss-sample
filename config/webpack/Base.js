@@ -93,7 +93,7 @@ class WebpackBaseConfig {
             test: /\.(png|jpg|gif|mp4|ogg|svg|woff|woff2|ttf|eot|ico)$/,
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]'
+              name: '[path][name].[ext]'
             }
           },
           {
@@ -135,7 +135,7 @@ class WebpackBaseConfig {
       output: {
         path: path.resolve('./dist/assets'),
         filename: 'app.js',
-        publicPath: '/assets/',
+        publicPath: '/',
       },
       plugins: [
         new Dotenv(),
