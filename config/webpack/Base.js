@@ -93,7 +93,7 @@ class WebpackBaseConfig {
             test: /\.(png|jpg|gif|mp4|ogg|svg|woff|woff2|ttf|eot|ico)$/,
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]'
+              name: '[name].[ext]'
             }
           },
           {
